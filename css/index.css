@@ -1,0 +1,978 @@
+@charset "utf-8";
+
+@import url('https://fonts.google.com/noto/specimen/Noto+Sans+KR');
+
+.wrapper {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*====== header ======*/
+
+.menu-search {
+    display: flex;
+    align-items: center;
+    width: 100%; height: 100px;
+    background-color: #add7f2;
+}
+
+.menu-bar {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.menu-bar > .bar {
+    width: 30px;
+    height: 4px;
+    background-color: #333;
+    margin: 6px 0;
+}
+
+.menu-text {
+    position: absolute;
+    top: 2px;
+    left: 40px;
+    font-size: 20px;
+    font-weight: 600;
+    color: black;
+}
+
+/*==== Dropdown menu ====*/
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 65px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+    z-index: 1;
+}
+
+.dropdown-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-menu ul li {
+    padding: 10px 20px;
+}
+
+.dropdown-menu ul li:hover {
+    background-color: #f7f8fa;
+}
+
+.dropdown-menu ul li a {
+    color: #434343;
+    text-decoration: none;
+}
+
+.show {
+    display: block;
+}
+
+.rightmenu {
+    margin-left: auto;
+}
+
+.rightmenu > div {
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+}
+
+.search-bar {
+    position: relative;
+    display: inline-block;
+    width: 450px; height: 40px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.search-bar .search-input {
+    width: 100%;
+    height: 100%;
+    padding-left: 20px;
+    padding-right: 50px;
+    border: none;
+    border-radius: 20px;
+    color: black;
+    background-color: white;
+}
+
+.search-bar img {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+.menu-icon  img {
+    width: 28px; height: 25px;
+}
+
+.user-icon {
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+}
+
+.user-icon, 
+.sopping-icon {
+    margin: 0 20px;
+}
+
+.logo-mainmenu {
+    padding: 50px 0;
+    width: 100%;
+    border-bottom: 2px solid #a5a4a4;
+}
+
+.mainmenu .gnb {
+    display: flex;
+}
+
+.mainmenu .gnb li {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0 20px;
+}
+
+
+/*====== main ======*/
+/*== slideimg ==*/
+.slide {
+margin-top: 20px;
+overflow: hidden;
+text-align: center;
+z-index: 1;   /* z-index 추가 */
+}
+
+input[type="radio"] {
+    width: 30px;
+    height: 30px;
+}
+
+.slide img {
+margin-top: 30px;
+width: 1180px;
+height: 800px;
+border-radius: 50px;
+transition: opacity 0.5s;
+}
+
+.slide li:first-child img {
+opacity: 1;
+}
+
+.slide ul {
+display: flex;
+transition: transform 0.5s;
+}
+
+.slide li:not(:first-child) {
+margin-left: 20px;
+}
+
+.slide #slide1:checked ~ ul {
+transform: none;
+}
+
+.slide #slide1:checked ~ ul li:first-child img {
+opacity: 1;
+}
+
+.slide #slide1:checked ~ ul li:nth-child(2) img {
+opacity: 0.5;
+}
+
+.slide #slide1:checked ~ ul li:nth-child(3) img {
+opacity: 0.5;
+}
+
+.slide #slide2:checked ~ ul {
+transform: translateX(calc(-100% - 20px));
+}
+
+.slide #slide2:checked ~ ul li:first-child img {
+opacity: 0.5;
+}
+
+.slide #slide2:checked ~ ul li:nth-child(2) img {
+opacity: 1;
+}
+
+.slide #slide2:checked ~ ul li:nth-child(3) img {
+opacity: 0.5;
+}
+
+.slide #slide3:checked ~ ul {
+transform: translateX(calc(-200% - 40px));
+}
+
+.slide #slide3:checked ~ ul li:first-child img {
+opacity: 0.5;
+}
+
+.slide #slide3:checked ~ ul li:nth-child(2) img {
+opacity: 0.5;
+}
+
+.slide #slide3:checked ~ ul li:nth-child(3) img {
+opacity: 1;
+}
+
+.slide input {
+    width: 15px; height: 15px;
+}
+
+.slide-buy-container {
+    position: relative;
+    width: 100%;
+    /* 아래 값은 실제 레이아웃에 맞게 조정하세요. */
+    height: auto;
+}
+
+
+.buy {
+    position: absolute;
+    bottom: -10%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 900px;
+    padding: 30px 50px;
+    background-color: #f6f6f6;
+    border-radius: 20px;
+    border: 1px solid #e2dede;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+}
+
+
+.buy-container {
+    display: flex;
+}
+
+fieldset {
+    margin-right: 24px;
+}
+
+.buy legend {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.hidden-legend {
+    visibility: hidden;
+}
+
+select {
+    height: 38px;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid #d9d9d9;
+    margin-left: 10px;
+    font-size: 14px;
+    padding: 0 20px;
+    appearance: none;
+}
+
+.form-group,
+.radio-group {
+    display: inline-block;
+    margin-right: 1em;
+}
+
+.form-group label {
+    padding-left: 12px; /* 좌측 여백 추가 */
+}
+
+.buy input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"] + label:before {
+    content: "";
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-right: 8px;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+input[type="radio"]:checked + label:before {
+    background-color: #6464de;
+    border-color: black;
+}
+
+.buy .button-reservation {
+    position: relative;
+    float: right;
+    margin-top: 150px;
+    right: 400px; /* 기존 구조에서의 버튼과 폼 요소들 간격 조정 */
+}
+
+
+.button-reservation button {
+    background-color: #6464de;
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+    width: 200px;
+    height: 50px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-reservation button:hover {
+    background-color: #4c4cba;
+}
+
+.buy input[type="text"],
+.buy input[type="email"],
+.buy input[type="tel"], {
+    width: 100%;
+    max-width: 280px;
+    height: 38px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    border: 1px solid #d9d9d9;
+    padding: 5px 15px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.buy input[type="date"] {
+    width: 100%;
+    max-width: 180px;
+    height: 38px;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid #d9d9d9;
+    padding: 5px 15px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    cursor: pointer;
+}
+
+/* 입력 필드 호버와 포커스 시 동적 변경 */
+.buy-container select:hover,
+.buy input[type="text"]:hover,
+.buy input[type="email"]:hover,
+.buy input[type="tel"]:hover,
+.buy input[type="text"]:focus,
+.buy input[type="email"]:focus,
+.buy input[type="tel"]:focus,
+.buy input[type="date"]:hover,
+.buy input[type="date"]:focus {
+    border: 1px solid #6464de;
+}
+
+.buy input[type="date"]::placeholder {
+    text-align: left;
+}
+
+
+/* 레이블 스타일 */
+.buy label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+
+/* 가로 폼 레이아웃 설정 */
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+
+/*== bestitem ==*/
+
+.section-divider {
+    margin: 50px 0;
+    padding: 50px 0;
+    background-color: #f7f8fa;
+}
+
+.best {
+    margin-top: 300px;
+}
+
+.best h3 {
+    margin-bottom: 70px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+
+.best-item ul {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+}
+
+.best-item ul > li {
+    display: inline-block;
+    vertical-align: top;
+    width: 32%;
+    margin-right: 2%;
+    margin-bottom: 2%;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    background-color: #ffffff;
+}
+
+.best-item ul > li:nth-child(3n) {
+    margin-right: 0;
+}
+
+
+.mainimg {
+    width: 580px; height: 390px;
+}
+
+.best-img-container {
+    overflow: hidden;
+}
+
+.best-item img {
+    width: 380px; height: 340px;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.best-item img:hover {
+    transform: scale(1.2);
+}
+
+.best-item ul > li h4 {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.best-item ul > li p {
+    line-height: 1.6;
+    margin: 20px 0;
+    font-size: 14px;
+    color: #6464de;
+    font-weight: 500;
+}
+
+.best-item ul > li p:last-child {
+    font-size: 20px;
+    color: black;
+    font-weight: bold;
+}
+
+.sub-title {
+    font-size: 18px;
+    color: #3e7cf0;
+}
+
+.best-price {
+    color: black;
+}
+
+.best .button-reservation {
+    margin-top: 50px;
+    text-align: center;
+}
+
+
+
+.thema {
+    margin-top: 170px;
+}
+
+.thema h3 {
+    margin-bottom: 70px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.thema-info > ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0;
+    gap: 20px;
+}
+
+.thema li {
+    cursor: pointer;
+    flex-basis: calc(25% -20px);
+    
+}
+
+.thema-img-box a:hover {
+    transform: scale(1.3);
+}
+
+
+
+.accommodation {
+    margin-top: 170px;
+    background-color: #f7f8fa;
+    padding: 50px 0;
+}
+
+.accommodation h3 {
+    text-align: center;
+    margin-bottom: 70px;
+    font-size: 36px;
+    font-weight: bold;
+    color: #434343;
+}
+
+.accommodation .waikiki > ul,
+.accommodation .mozart > ul,
+.accommodation .Noboribetsu > ul {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* 그림자 추가 */
+}
+
+.accommodation .waikiki {
+    margin-bottom: 40px;
+}
+
+.accommodation .mozart {
+    margin-bottom: 40px;
+}
+
+.accommodation .waikiki > ul {
+    display: grid;
+    grid-template-columns: auto 1fr auto; 
+    grid-gap: 20px; 
+    align-items: center;
+}
+
+
+.accommodation .waikiki > ul > li {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+}
+
+.waikiki li:nth-child(3) {
+    width: 425px;
+}
+
+.waikiki h4 {
+    margin-top: 10px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.waikiki .p1 {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #d0d0d0;
+}
+
+.waikiki .p2 {
+    line-height: 1.6;
+    font-size: 18px;
+    color: #3e7cf0;
+    font-weight: bold;
+}
+
+.waikiki .p2-sub {
+    color: #6464de;
+}
+
+.waikiki .p3-container {
+    padding: 20px 0;
+    margin-top: 100px;
+    border-top: 2px solid #a5a4a4;
+    display: flex;
+    justify-content: space-between;
+}
+
+.waikiki .p3-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.waikiki .p3 {
+    font-size: 20px;
+    color: black;
+    font-weight: bold;
+}
+
+.waikiki .p3-sub {
+    font-size: 18px;
+    color: #dbdbdb;
+}
+
+.waikiki .p4 {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.mozart {
+    margin-top: 135px;
+}
+
+
+.mozart > ul {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-gap: 20px; 
+    align-items: center;
+    direction: rtl; 
+}
+
+.mozart > ul > li {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+}
+
+.mozart .sub-img {
+    display: flex;
+    height: auto;
+    flex-direction: column;
+    gap: 30px; 
+}
+
+.mozart li:nth-child(3) {
+    text-align: left;
+    width: 425px;
+}
+
+.mozart h4 {
+    margin-top: 10px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.mozart .p1 {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #d0d0d0;
+}
+
+.mozart .p2 {
+    line-height: 1.6;
+    font-size: 18px;
+    color: #3e7cf0;
+    font-weight: bold;
+}
+
+.mozart .p2-sub {
+    color: #6464de;
+}
+
+.mozart .p3-container {
+    padding: 20px 0;
+    margin-top: 100px;
+    border-top: 2px solid #a5a4a4;
+    display: flex;
+    justify-content: space-between;
+}
+
+.mozart .p3-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.mozart .p3 {
+    font-size: 20px;
+    color: black;
+    font-weight: bold;
+}
+
+.mozart .p3-sub {
+    font-size: 18px;
+    color: #dbdbdb;
+}
+
+.mozart .p4 {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.Noboribetsu {
+    margin-top: 135px;
+}
+
+.accommodation .Noboribetsu > ul {
+    display: grid;
+    grid-template-columns: auto 1fr auto; 
+    grid-gap: 20px;
+    align-items: center;
+}
+
+
+.accommodation .Noboribetsu > ul > li {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+}
+
+.sub-img {
+    display: flex;
+    height: auto;
+    flex-direction: column;
+    gap: 30px; 
+}
+
+.Noboribetsu li:nth-child(3) {
+    width: 425px;
+}
+
+.Noboribetsu h4 {
+    margin-top: 10px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.Noboribetsu .p1 {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #d0d0d0;
+}
+
+.Noboribetsu .p2 {
+    line-height: 1.6;
+    font-size: 18px;
+    color: #3e7cf0;
+    font-weight: bold;
+}
+
+.Noboribetsu .p2-sub {
+    color: #6464de;
+}
+
+.Noboribetsu .p3-container {
+    padding: 20px 0;
+    margin-top: 100px;
+    border-top: 2px solid #a5a4a4;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Noboribetsu .p3-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.Noboribetsu .p3 {
+    font-size: 20px;
+    color: black;
+    font-weight: bold;
+}
+
+.Noboribetsu .p3-sub {
+    font-size: 18px;
+    color: #dbdbdb;
+}
+
+.Noboribetsu .p4 {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.accommodation .button-reservation {
+    margin-top: 70px;
+    text-align: center;
+}
+
+
+.ticket {
+    margin-top: 170px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 20px;
+}
+
+.grid-container > li {
+    grid-column: span 4;
+}
+
+.ticket h3 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.ticket li {
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+    overflow: hidden;
+}
+
+.ticket li:hover {
+    transform: scale(1.1);
+    z-index: 1;
+}
+
+
+
+.banner {
+    margin-top: 170px;
+}
+
+.side-button {
+    position: fixed;
+    z-index: 1000;
+    border: none;
+    border-radius: 25px;
+    text-align: center;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+    width: 50px;
+    height: 50px;
+}
+
+.side-button img {
+    /* Set dimensions of the icon image */
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.side-button:hover {
+    opacity: 1;
+}
+
+.side-button img {
+    max-width: 100%;
+    height: auto;
+}
+
+#back-to-top {
+    background-color: #cecccc;
+    bottom: 90px;
+    right: 50px;
+}
+
+#contact-us {
+    bottom: 190px;
+    right: 50px;
+}
+
+
+/*====== footer ======*/
+
+footer {
+    position: relative;
+    width: 100%;
+}
+
+.footer-menu {
+    margin-top: 170px;
+    border-top: 1px solid #867d80;
+    border-bottom: 1px solid #867d80;
+}
+
+.foot-menu-flexbox {
+    display: flex;
+    height: 80px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.foot-menu {
+    width: 1180px;
+}
+
+
+.foot-menu ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.foot-menu a {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.foot-menu a:hover {
+    text-decoration: underline;
+}
+
+.logo-info-sns-flexbox {
+    margin: 52px 0;
+    display: flex;
+    height: 172px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.info p,
+.info > address,
+.info > .copyright{
+    font-size: 12px;
+    line-height: 2;
+}
+
+.info a {
+    font-weight: bold;
+    display: inline-block;
+}
+
+.business-info .info-check,
+address a {
+    color: #3e7cf0;
+}
+
+.business-info > a:hover,
+address > a:hover {
+    text-decoration: underline;
+}
+
+.info {
+    width: 830px;
+}
+
+.sns {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto;
+    grid-gap: 10px;
+}
+
+.sns a img {
+    width: 30px;
+    height: 30px;
+}
